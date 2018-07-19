@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import user from "./images/user.png";
 import "./App.css";
-import { createStore } from "redux"; // Added
-import reducer from "./reducers" // Added
+import { createStore } from "redux"; // Added. The {} is necessary for importing a component not defined as "default".
+import reducer from "./reducers" // Added. The lack of {} is used with components defined as "default".
 
 // Added
 const initialState = {
@@ -22,7 +22,7 @@ class App extends Component {
 //     location: "localhost"
 //   };
   render() {
-    const { name, description, likes, location } = store.getState(); // Don't use "this."
+    const { name, description, likes, location } = store.getState(); // Don't use "this", such as "this.setstate()".
     return (
       <div className="App">
         <section className="User__img">
